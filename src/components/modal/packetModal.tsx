@@ -5,6 +5,7 @@ import colors from '../../assets/colors/colors';
 import style from './style';
 import { Close, Refresh, Photo } from '../../assets';
 import { CustomButton } from '../customButton';
+import { PacketList } from '../packetList';
 
 interface IModal {
     visible: boolean
@@ -46,22 +47,14 @@ export const PacketModal: FC<IModal> = ({ visible, onClick }) => {
                     source={Photo}
                     style={style.photo}
                 />
-                <View style={style.contentView}>
-                    <Text style={style.contentTitle}>
-                        Ped Paketleri
-                    </Text>
-                    <Text style={style.contentText}>
-                        20 Standart Ped ve 10 Süper Ped
-                    </Text>
-                    <Text style={style.deleteText}>
-                        Paketten Çıkar
-                    </Text>
-                </View>
+                <PacketList
+                    text=' 20 Standart Ped ve 10 Süper Ped'
+                    title=' Ped Paketleri'
+                />
                 <View style={style.buttonView}>
                     <CustomButton />
                 </View>
             </View>
-
         </Modal>
     )
 }

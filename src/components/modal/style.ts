@@ -39,7 +39,6 @@ export default StyleSheet.create({
     },
     infoText: {
         marginLeft: 15,
-        fontSize: 16,
         fontFamily: "Gordita Regular",
         color: colors.customBlack
     },
@@ -48,30 +47,6 @@ export default StyleSheet.create({
         alignSelf: "center",
         marginTop: 20,
         height: 160
-    },
-    contentView: {
-        backgroundColor: colors.white,
-        marginHorizontal: 20,
-        borderRadius: 10,
-        paddingVertical: 5,
-        paddingHorizontal: 20,
-        elevation: 3,
-        marginTop: 10
-    },
-    contentTitle: {
-        fontSize: 17,
-        fontFamily: "Gordita Medium",
-        color: colors.customBlack
-    },
-    contentText: {
-        fontFamily: "Gordita Regular",
-        color: "grey",
-        marginTop: 10
-    },
-    deleteText: {
-        fontFamily: "Gordita Medium",
-        color: colors.customBlack,
-        marginTop: 10
     },
     buttonView: {
         width: "90%",
