@@ -4,28 +4,36 @@ import { TabView, SceneMap } from 'react-native-tab-view';
 import { TabBar } from 'react-native-tab-view';
 import colors from '../../assets/colors/colors';
 import style from './style';
+import { CustomSlider } from '../CustomSlider';
 
 const FirstRoute = () => (
     <View style={style.container}>
-        <Text>1.</Text>
+        <CustomSlider title='Standart Ped' />
+        <CustomSlider title='Süper Ped' />
+        <CustomSlider title='Süper+ Ped' />
     </View>
 );
 
 const SecondRoute = () => (
     <View style={style.container}>
-        <Text>2.</Text>
+        <CustomSlider title='Günlük Ped' />
+        <CustomSlider title='Süper Günlük Ped' />
     </View>
 );
+
 const ThirdRoute = () => (
     <View style={style.container}>
-        <Text>3.</Text>
+        <CustomSlider title='Mini Tampon' />
+        <CustomSlider title='Standar Tampon' />
     </View>
 );
+
 const renderScene = SceneMap({
     first: FirstRoute,
     second: SecondRoute,
     third: ThirdRoute
 });
+
 export const TabViewContainer = () => {
     const layout = useWindowDimensions();
     const [index, setIndex] = React.useState(0);
