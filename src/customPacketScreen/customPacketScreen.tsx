@@ -3,6 +3,7 @@ import React from 'react'
 import { CustomHeader } from '../components'
 import colors from '../assets/colors/colors'
 import style from './style'
+import { TabViewContainer } from '../components/tabView'
 
 export const CustomPacketScreen = () => {
 
@@ -20,6 +21,7 @@ export const CustomPacketScreen = () => {
                 doğrultusunda seçeceğin ürünlerden
                 ve miktarlardan, sana özel bir paket oluşturalım.
             </Text>
+            <TabViewContainer/>
         </View>
     )
 }
