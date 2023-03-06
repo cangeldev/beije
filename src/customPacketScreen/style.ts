@@ -8,4 +8,17 @@ export default StyleSheet.create({
         flex: 1,
         paddingHorizontal: 25,
     },
+    title: {
+        fontFamily: "Gordita Bold",
+        fontSize: 25,
+        color: colors.customBlack,
+        marginTop:20
+    },
+    info: {
+        fontFamily: "Gordita Regular",
+        color: colors.infoText,
+        fontSize: 15,
+        marginTop: 15,
+        lineHeight: 23
+    }
 })

@@ -5,7 +5,7 @@ import colors from '../assets/colors/colors'
 import style from './style'
 
 export const CustomPacketScreen = () => {
-    
+
     return (
         <View style={style.container}>
             <StatusBar
@@ -13,6 +13,13 @@ export const CustomPacketScreen = () => {
                 barStyle={'dark-content'}
             />
             <CustomHeader />
+            <Text style={style.title}>
+                Kendi Paketini Oluştur
+            </Text>
+            <Text style={style.info}>Tercih ve ihtiyaçların
+                doğrultusunda seçeceğin ürünlerden
+                ve miktarlardan, sana özel bir paket oluşturalım.
+            </Text>
         </View>
     )
 }
