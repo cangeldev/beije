@@ -26,5 +26,9 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         marginTop: 5,
         marginHorizontal: 5
+    },
+    slider: {
+        width: "102%",
+        marginLeft: -4
     }
 })

@@ -1,12 +1,20 @@
 import { View, Text, StatusBar } from 'react-native'
-import React from 'react'
-import { CustomButton, CustomHeader } from '../components'
+import React, { useState } from 'react'
+import { CustomButton, CustomHeader, TabViewContainer } from '../components'
 import colors from '../assets/colors/colors'
 import style from './style'
-import { TabViewContainer } from '../components/tabView'
+import { PacketModal } from '../components/modal'
 
 export const CustomPacketScreen = () => {
-   
+
+    const [ModalVisible, setModalVisible] = useState(false)
+    const toggleModal = () => {
+        setModalVisible(!ModalVisible);
+    };
+    function handleInputToggle() {
+        setModalVisible(!ModalVisible)
+    }
+
     return (
         <View style={style.container}>
             <StatusBar
@@ -17,12 +25,17 @@ export const CustomPacketScreen = () => {
             <Text style={style.title}>
                 Kendi Paketini Oluştur
             </Text>
-            <Text style={style.info}>Tercih ve ihtiyaçların
+            <Text style={style.info}>
+                Tercih ve ihtiyaçların
                 doğrultusunda seçeceğin ürünlerden
                 ve miktarlardan, sana özel bir paket oluşturalım.
             </Text>
-            <TabViewContainer/>
-            <CustomButton />
+            <TabViewContainer />
+            <CustomButton onClick={toggleModal} />
+            <PacketModal
+                visible={ModalVisible}
+                onClick={handleInputToggle}
+            />
         </View>
     )
 }

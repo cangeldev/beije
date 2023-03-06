@@ -6,13 +6,13 @@ export default StyleSheet.create({
     container: {
         backgroundColor: colors.backGround,
         flex: 1,
-        paddingHorizontal: 25,
+        paddingHorizontal: 25
     },
     title: {
         fontFamily: "Gordita Bold",
         fontSize: 25,
         color: colors.customBlack,
-        marginTop:20
+        marginTop: 20
     },
     info: {
         fontFamily: "Gordita Regular",

@@ -1,11 +1,13 @@
 import { Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { FC } from 'react'
 import style from './style'
 
-
-export const CustomButton = () => {
+interface IButton {
+    onClick?: () => void;
+}
+export const CustomButton: FC<IButton> = ({ onClick }) => {
     return (
-        <TouchableOpacity >
+        <TouchableOpacity onPress={onClick}>
             <Text style={style.text}>
                 Paketini Gör
             </Text>

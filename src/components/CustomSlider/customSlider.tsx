@@ -10,17 +10,20 @@ interface ISlider {
 }
 
 export const CustomSlider: FC<ISlider> = ({ title }) => {
-
     const [value, setValue] = React.useState(0)
 
     return (
         <View style={style.container}>
             <Text style={style.title}>{title}</Text>
-            <ImageBackground source={Chat} style={[style.image, { marginLeft: value * 5.30 }]}>
-                <Text style={style.value}> {value}</Text>
+            <ImageBackground
+                source={Chat}
+                style={[style.image, { marginLeft: value * 5.30 }]}>
+                <Text style={style.value}>
+                    {value}
+                </Text>
             </ImageBackground>
             <Slider
-                style={{ width: "102%", marginLeft: -4 }}
+                style={style.slider}
                 minimumValue={0}
                 maximumValue={60}
                 minimumTrackTintColor={colors.customBlack}
