@@ -31,7 +31,10 @@ export const CustomPacketScreen = () => {
                 ve miktarlardan, sana özel bir paket oluşturalım.
             </Text>
             <TabViewContainer />
-            <CustomButton onClick={toggleModal} title=" Paketini Gör"/>
+            <CustomButton
+                onClick={toggleModal}
+                title=" Paketini Gör"
+            />
             <PacketModal
                 visible={ModalVisible}
                 onClick={handleInputToggle}

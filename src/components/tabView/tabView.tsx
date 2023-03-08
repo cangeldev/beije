@@ -8,23 +8,44 @@ import { CustomSlider } from '../CustomSlider';
 
 const BeijePedRoute = () => (
     <View style={style.container}>
-        <CustomSlider product="standartPed" packages='beijePed' />
-        <CustomSlider product="superPed" packages='beijePed' />
-        <CustomSlider product="ultraPed" packages='beijePed' />
+        <CustomSlider
+            product="standartPed"
+            packages='beijePed'
+        />
+        <CustomSlider
+            product="superPed"
+            packages='beijePed'
+        />
+        <CustomSlider
+            product="ultraPed"
+            packages='beijePed'
+        />
     </View>
 );
 
 const BeijeDailyPedRoute = () => (
     <View style={style.container}>
-        <CustomSlider product="dailyPed" packages='beijeDailyPed' />
-        <CustomSlider product="superDailyPed" packages='beijeDailyPed' />
+        <CustomSlider
+            product="dailyPed"
+            packages='beijeDailyPed'
+        />
+        <CustomSlider
+            product="superDailyPed"
+            packages='beijeDailyPed'
+        />
     </View>
 );
 
 const BeijeTamponRoute = () => (
     <View style={style.container}>
-        <CustomSlider product="miniTampon" packages='beijeTamponPed' />
-        <CustomSlider product="standartTampon" packages='beijeTamponPed' />
+        <CustomSlider
+            product="miniTampon"
+            packages='beijeTamponPed'
+        />
+        <CustomSlider
+            product="standartTampon"
+            packages='beijeTamponPed'
+        />
     </View>
 );
 
