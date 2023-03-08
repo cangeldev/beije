@@ -18,7 +18,7 @@ export default StyleSheet.create({
     text: {
         fontFamily: "Gordita Regular",
         color: "grey",
-        marginTop: 10
+        marginTop: 10,
     },
     deleteText: {
         fontFamily: "Gordita Medium",

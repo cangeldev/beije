@@ -4,12 +4,17 @@ import style from './style'
 
 interface IButton {
     onClick?: () => void;
+    title: string,
+    disable?: boolean,
 }
-export const CustomButton: FC<IButton> = ({ onClick }) => {
+export const CustomButton: FC<IButton> = ({ onClick, title, disable }) => {
     return (
-        <TouchableOpacity onPress={onClick}>
+        <TouchableOpacity
+            onPress={onClick}
+            disabled={disable}
+            style={disable ? style.touchable : null}>
             <Text style={style.text}>
-                Paketini Gör
+                {title}
             </Text>
         </TouchableOpacity>
     )

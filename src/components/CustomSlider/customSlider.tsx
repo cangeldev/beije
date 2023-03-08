@@ -4,22 +4,32 @@ import Slider from '@react-native-community/slider';
 import style from './style';
 import colors from '../../assets/colors/colors';
 import { Chat } from '../../assets';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCount, } from '../../features/beijePedsSlice';
+import { RootState } from "../../features/store"
 interface ISlider {
-    title: string
+    packages: string,
+    product: string
 }
 
-export const CustomSlider: FC<ISlider> = ({ title }) => {
+export const CustomSlider: FC<ISlider> = ({ packages, product }) => {
     const [value, setValue] = React.useState(0)
-
+    const dispatch = useDispatch();
+    dispatch(changeCount({ intCount: value, packages: packages, product: product }));
+    const titleName =
+        useSelector((
+            state: RootState) => state.beijePeds[packages][product].title)
+    const countValue =
+        useSelector((
+            state: RootState) => state.beijePeds[packages][product].count)
     return (
         <View style={style.container}>
-            <Text style={style.title}>{title}</Text>
+            <Text style={style.title}>{titleName}</Text>
             <ImageBackground
                 source={Chat}
                 style={[style.image, { marginLeft: value * 5.30 }]}>
                 <Text style={style.value}>
-                    {value}
+                    {countValue}
                 </Text>
             </ImageBackground>
             <Slider

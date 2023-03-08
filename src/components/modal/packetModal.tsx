@@ -6,6 +6,9 @@ import style from './style';
 import { Close, Refresh, Photo } from '../../assets';
 import { CustomButton } from '../customButton';
 import { PacketList } from '../packetList';
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '../../features/store'
+import { totalprice } from '../../features/beijePedsSlice';
 
 interface IModal {
     visible: boolean
@@ -13,7 +16,16 @@ interface IModal {
 }
 
 export const PacketModal: FC<IModal> = ({ visible, onClick }) => {
+
+    const dispatch = useDispatch()
+    dispatch(totalprice())
+    const title = useSelector((state: RootState) => state.beijePeds)
+    const { standartPed, superPed, ultraPed } = title.beijePed;
+    const { dailyPed, superDailyPed } = title.beijeDailyPed;
+    const { miniTampon, standartTampon } = title.beijeTamponPed;
+
     return (
+
         <Modal isVisible={visible}
             onBackdropPress={onClick}>
             <View style={style.container}>
@@ -48,12 +60,48 @@ export const PacketModal: FC<IModal> = ({ visible, onClick }) => {
                     style={style.photo}
                 />
                 <PacketList
-                    text=' 20 Standart Ped ve 10 Süper Ped'
+                    visible={
+                        title.beijePed.standartPed.count +
+                            title.beijePed.superPed.count +
+                            title.beijePed.ultraPed.count == 0 ?
+                            "none" : "flex"
+                    }
+                    text={((standartPed.count == 0 ? "" : `${standartPed.count} ${standartPed.title}`) +
+                        " " + (superPed.count == 0 ? "" : `${superPed.count} ${superPed.title}`) +
+                        " " + (ultraPed.count == 0 ? "" : `${ultraPed.count} ${ultraPed.title}`))
+                    }
                     title=' Ped Paketleri'
                 />
-                <View style={style.buttonView}>
-                    <CustomButton />
+                <PacketList
+                    visible={
+                        title.beijeDailyPed.dailyPed.count
+                            + title.beijeDailyPed.superDailyPed.count == 0 ?
+                            "none" : "flex"
+                    }
+                    text={((dailyPed.count == 0 ? "" : `${dailyPed.count} ${dailyPed.title}`) +
+                        " " + (superDailyPed.count == 0 ? "" : `${superDailyPed.count} ${superDailyPed.title}`))
+                    }
+                    title=' Günlük Ped Paketleri'
+                />
+                <PacketList
+                    visible={
+                        title.beijeTamponPed.miniTampon.count +
+                            title.beijeTamponPed.standartTampon.count == 0 ?
+                            "none" : "flex"
+                    }
+                    text={((miniTampon.count == 0 ? "" : `${miniTampon.count} ${miniTampon.title}`) +
+                        " " + (standartTampon.count == 0 ? "" : `${standartTampon.count} ${standartTampon.title}`))
+                    }
+                    title=' Tampon Paketleri'
+                />
+                <View
+                    style={style.buttonView}>
+                    <CustomButton
+                        disable={title.total == 0 ? true : false}
+                        title={"Sepete Ekle (₺" + title.total + ")"}
+                    />
                 </View>
+
             </View>
         </Modal>
     )

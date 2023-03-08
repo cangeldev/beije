@@ -6,32 +6,32 @@ import colors from '../../assets/colors/colors';
 import style from './style';
 import { CustomSlider } from '../CustomSlider';
 
-const FirstRoute = () => (
+const BeijePedRoute = () => (
     <View style={style.container}>
-        <CustomSlider title='Standart Ped' />
-        <CustomSlider title='Süper Ped' />
-        <CustomSlider title='Süper+ Ped' />
+        <CustomSlider product="standartPed" packages='beijePed' />
+        <CustomSlider product="superPed" packages='beijePed' />
+        <CustomSlider product="ultraPed" packages='beijePed' />
     </View>
 );
 
-const SecondRoute = () => (
+const BeijeDailyPedRoute = () => (
     <View style={style.container}>
-        <CustomSlider title='Günlük Ped' />
-        <CustomSlider title='Süper Günlük Ped' />
+        <CustomSlider product="dailyPed" packages='beijeDailyPed' />
+        <CustomSlider product="superDailyPed" packages='beijeDailyPed' />
     </View>
 );
 
-const ThirdRoute = () => (
+const BeijeTamponRoute = () => (
     <View style={style.container}>
-        <CustomSlider title='Mini Tampon' />
-        <CustomSlider title='Standar Tampon' />
+        <CustomSlider product="miniTampon" packages='beijeTamponPed' />
+        <CustomSlider product="standartTampon" packages='beijeTamponPed' />
     </View>
 );
 
 const renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute,
-    third: ThirdRoute
+    first: BeijePedRoute,
+    second: BeijeDailyPedRoute,
+    third: BeijeTamponRoute
 });
 
 export const TabViewContainer = () => {

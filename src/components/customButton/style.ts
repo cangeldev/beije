@@ -11,5 +11,8 @@ export default StyleSheet.create({
         width: "100%",
         borderRadius: 25,
         marginBottom: 30
+    },
+    touchable: {
+        opacity: 0.3
     }
 })
